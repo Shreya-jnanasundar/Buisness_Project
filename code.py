@@ -11,13 +11,12 @@ from sklearn.metrics import mean_squared_error, r2_score
 st.set_page_config(layout="wide")
 st.title("📊 Social Media Trends Dashboard with Automated Insights")
 
-# Load directly from GitHub
-csv_url = "https://github.com/Shreya-jnanasundar/Buisness_Project/blob/master/social_media_trends.csv"
-try:
-    df = pd.read_csv(csv_url)
-    st.success("✅ Data loaded automatically from GitHub")
-except Exception as e:
-    st.error(f"❌ Could not load data from GitHub: {e}")
+uploaded_file = st.file_uploader("Upload your social_media_trends.csv file", type=["csv"])
+
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
+    ...
+
 
     # Data Cleaning
     df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
