@@ -12,7 +12,7 @@ st.set_page_config(layout="wide")
 st.title("📊 Social Media Trends Dashboard with Automated Insights")
 
 # Load directly from GitHub
-csv_url = "https://raw.githubusercontent.com/Shreya-jnanasundar/Buisness_Project/master/social_media_trends.csv"
+csv_url = "https://github.com/Shreya-jnanasundar/Buisness_Project/blob/master/social_media_trends.csv"
 try:
     df = pd.read_csv(csv_url)
     st.success("✅ Data loaded automatically from GitHub")
