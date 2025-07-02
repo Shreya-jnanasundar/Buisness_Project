@@ -11,11 +11,12 @@ from sklearn.metrics import mean_squared_error, r2_score
 st.set_page_config(layout="wide")
 st.title("📊 Social Media Trends Dashboard with Automated Insights")
 
-# Upload CSV
-uploaded_file = st.file_uploader("Upload your social_media_trends.csv file", type=["csv"])
-
-if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file)
+csv_url = "https://raw.githubusercontent.com/Shreya-jnanasundar/Buisness_Project/main/social_media_trends.csv"
+try:
+    df = pd.read_csv(csv_url)
+    st.success("✅ Data loaded successfully from the provided URL")
+except Exception as e:
+    st.error(f"❌ Failed to load data: {e}")
 
     # Data Cleaning
     df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
