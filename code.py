@@ -11,7 +11,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 st.set_page_config(layout="wide")
 st.title("📊 Social Media Trends Dashboard with Automated Insights")
 
-csv_url = "https://raw.githubusercontent.com/Shreya-jnanasundar/Buisness_Project/main/social_media_trends.csv"
+csv_url = "https://raw.githubusercontent.com/Shreya-jnanasundar/Buisness_Project/master/social_media_trends.csv"
 try:
     df = pd.read_csv(csv_url)
     st.success("✅ Data loaded successfully from the provided URL")
